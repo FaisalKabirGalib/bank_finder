@@ -54,7 +54,21 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
-const like = 'sample';
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Bank Finder',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const LocationArView(),
+    );
+  }
+}
 ```
 
 ## Additional information(Optional)
@@ -71,7 +85,7 @@ const like = 'sample';
 }
 ```
 
-### in your build gradle file change all plugin compile sdk version to 34
+### in your build gradle file change all plugin compile sdk version to 34 (if AAPT2 error occurs)
 
 ```gradle
 subprojects {
